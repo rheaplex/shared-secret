@@ -1,7 +1,7 @@
 #!/bin/bash
 QR_CODE_FILENAME="shared-secret-qr-code.svg"
 ISSUER="Shared%20Secret%20%282020%29"
-ID="Rob%20Myers"
+ID="Rhea%20Myers"
 SECRET="$(echo $1 | sha256sum | cut -f 1 -d ' ' | xxd -r -p - | base32 | cut -f 1 -d '=')"
 AUTH="otpauth://totp/${ID}?secret=${SECRET}&issuer=${ISSUER}"
 
